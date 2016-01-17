@@ -73,12 +73,22 @@ std::vector<VideoMode> VideoModeImpl::getFullscreenModes()
 ////////////////////////////////////////////////////////////
 VideoMode VideoModeImpl::getDesktopMode()
 {
+    VideoMode mode; // RVO
+
+    // Rely exclusively on mode and convertCGModeToSFMode
+    // instead of display id and CGDisplayPixelsHigh/Wide.
+
     CGDirectDisplayID display = CGMainDisplayID();
-    return VideoMode(CGDisplayPixelsWide(display),
-                     CGDisplayPixelsHigh(display),
-                     displayBitsPerPixel(display));
+    CGDisplayModeRef cgmode = CGDisplayCopyDisplayMode(display);
+
+    mode = convertCGModeToSFMode(cgmode);
+
+    CGDisplayModeRelease(cgmode);
+
+    return mode;
 }
 
 } // namespace priv
 
 } // namespace sf
+
