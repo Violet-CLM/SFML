@@ -64,6 +64,9 @@
     #define GLEXT_glBlendEquation                     glBlendEquationOES
     #define GLEXT_GL_FUNC_ADD                         GL_FUNC_ADD_OES
     #define GLEXT_GL_FUNC_SUBTRACT                    GL_FUNC_SUBTRACT_OES
+    #define GLEXT_GL_FUNC_REVERSE_SUBTRACT            GL_FUNC_REVERSE_SUBTRACT_OES
+    #define GLEXT_GL_FUNC_MIN                         GL_FUNC_MIN_OES
+    #define GLEXT_GL_FUNC_MAX                         GL_FUNC_MAX_OES
 
     // The following extensions are optional.
 
@@ -138,10 +141,13 @@
     #define GLEXT_blend_minmax                        sfogl_ext_EXT_blend_minmax
     #define GLEXT_glBlendEquation                     glBlendEquationEXT
     #define GLEXT_GL_FUNC_ADD                         GL_FUNC_ADD_EXT
+    #define GLEXT_GL_FUNC_MAX                         GL_MAX_EXT
+    #define GLEXT_GL_FUNC_MIN                         GL_MIN_EXT
 
     // Core since 1.2 - EXT_blend_subtract
     #define GLEXT_blend_subtract                      sfogl_ext_EXT_blend_subtract
     #define GLEXT_GL_FUNC_SUBTRACT                    GL_FUNC_SUBTRACT_EXT
+    #define GLEXT_GL_FUNC_REVERSE_SUBTRACT            GL_FUNC_REVERSE_SUBTRACT_EXT
 
     // Core since 1.3 - ARB_multitexture
     #define GLEXT_multitexture                        sfogl_ext_ARB_multitexture

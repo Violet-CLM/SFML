@@ -67,6 +67,9 @@ namespace
         {
             case sf::BlendMode::Add:             return GLEXT_GL_FUNC_ADD;
             case sf::BlendMode::Subtract:        return GLEXT_GL_FUNC_SUBTRACT;
+			case sf::BlendMode::ReverseSubtract: return GLEXT_GL_FUNC_REVERSE_SUBTRACT;
+			case sf::BlendMode::Min:             return GLEXT_GL_FUNC_MIN;
+			case sf::BlendMode::Max:             return GLEXT_GL_FUNC_MAX;
         }
 
         sf::err() << "Invalid value for sf::BlendMode::Equation! Fallback to sf::BlendMode::Add." << std::endl;
